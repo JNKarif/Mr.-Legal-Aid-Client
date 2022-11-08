@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -13,7 +14,7 @@ calendaring clerk at a personal injury firm but they quickly tapped me to be a s
 professional. There and with the firms that followed, I gained a significant amount of
 experience and knowledge in the field. I progressed from answering the phones to
 managing complex, multi-million dollars cases from inception to appeal.</p>
-      <button className="btn btn-outline">Read my blogs</button>
+     <Link to='/blog'> <button className="btn btn-outline">Read my blogs</button></Link>
     </div>
   </div>
 </div>

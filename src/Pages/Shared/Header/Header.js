@@ -27,7 +27,8 @@ const Header = () => {
         <span className="badge badge-xs badge-primary indicator-item"></span>
       </div>
     </button>
-    <p className=""><Link to='/login' className="">Login</Link> </p>
+    {/* <button className="btn btn-ghost">Button</button> */}
+    <p className=""><Link to='/login' className="btn btn-ghost">Login</Link> </p>
     
   
   </div>
