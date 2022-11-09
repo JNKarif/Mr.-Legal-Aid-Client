@@ -1,6 +1,8 @@
 import Main from "../../../Layout/Main";
 import Home from "../../Home/Home/Home";
 import PageNotFound from "../../PageNotFound/PageNotFound";
+import Reviews from "../../Reviews/Reviews";
+import SeeAll from "../../SeeAll/SeeAll";
 import ServiceDetails from "../../ServiceDetails/ServiceDetails";
 import Blog from "../../Shared/Header/Blog/Blog";
 import Login from "../../Shared/Login/Login";
@@ -27,17 +29,26 @@ const router = createBrowserRouter([
                 element: <SignUp></SignUp>
             },
             {
-                path:'/blog',
-                element:<Blog></Blog>
+                path: '/blog',
+                element: <Blog></Blog>
             },
             {
-                path:'/services/:id',
-                element:<ServiceDetails></ServiceDetails>,
-                loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+                path: '/services/:id',
+                element: <ServiceDetails></ServiceDetails>,
+                loader: ({ params }) => fetch(`https://assignment-11-server-five-kappa.vercel.app/services/${params.id}`)
             },
             {
-                path:'*',
-                element:<PageNotFound></PageNotFound>
+                path: '/reviews',
+                element: <Reviews></Reviews>
+
+            },
+            {
+                path: '/services/seeall',
+                element: <SeeAll></SeeAll>
+            },
+            {
+                path: '*',
+                element: <PageNotFound></PageNotFound>
             }
         ]
     }

@@ -39,7 +39,7 @@ const {login}=useContext(AuthContext)
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="Your email" className="input input-bordered" />
+                            <input type="email" name='email' placeholder="Your email" className="input input-bordered" required />
                         </div>
 
                         {/* password */}
@@ -47,7 +47,7 @@ const {login}=useContext(AuthContext)
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="Your password" className="input input-bordered" />
+                            <input type="password" name='password' placeholder="Your password" className="input input-bordered" required/>
                             <label className="label">
 
                             </label>

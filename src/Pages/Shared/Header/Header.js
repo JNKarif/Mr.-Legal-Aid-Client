@@ -11,7 +11,7 @@ const Header = () => {
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
         <li><Link to='/blog'>Blog</Link></li>
-        <li><Link to='/'>My Review</Link></li>
+        <li><Link to='/reviews'>My Review</Link></li>
         <li><Link to='/'>Add Service</Link></li>
       </ul>
     </div>

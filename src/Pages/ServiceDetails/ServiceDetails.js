@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import AddReview from './AddReview/AddReview';
 
 const ServiceDetails = () => {
     const { img, price, description, title } = useLoaderData();
-    const { user } = useContext(AuthContext)
+
     return (
         <div>
             {/* details section */}
@@ -33,25 +34,27 @@ const ServiceDetails = () => {
 
 
 
-<div className="card card-side bg-base-100 shadow-xl">
- <div className='w-full'>
-    
-  <figure><img src={img} alt="Movie"/></figure>
- </div>
-  <div className="card-body w-full">
-    <h2 className="card-title text-3xl">{title}</h2>
-    <p>{description}.</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-outline w-2/5">$ {price}</button>
-    </div>
-  </div>
-</div>
+            <div className="card card-side grid grid-cols-1 md:grid-cols-2 bg-base-100 shadow-xl">
+                <div className='w-full bg-black-600'>
+
+                    <figure><img src={img} alt="Movie" /></figure>
+                </div>
+                <div className="card-body bg-black w-full">
+                    <h2 className="card-title text-3xl">{title}</h2>
+                    <p>{description}</p>
+                    <div className="card-actions justify-end">
+                        <button className="btn btn-outline w-2/5">$ {price}</button>
+                    </div>
+                </div>
+            </div>
 
 
 
             {/* review section */}
             <div>
-                <p className='text-4xl text-center my-12'>Review section is coming</p>
+
+                <AddReview></AddReview>
+
             </div>
 
         </div>

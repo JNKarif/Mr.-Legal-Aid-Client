@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
@@ -6,7 +7,7 @@ const Services = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://assignment-11-server-five-kappa.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -28,8 +29,10 @@ const Services = () => {
 
             </div>
             <div className='text-center'>
+                <Link to='/services/seeall'>
+                    <button className='btn btn-outline w-2/5'>See All</button>
+                </Link>
 
-                <button className='btn btn-outline w-2/5'>See All</button>
             </div>
 
         </div>

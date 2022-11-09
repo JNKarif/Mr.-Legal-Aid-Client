@@ -1,3 +1,34 @@
+
+
+Project name: Mr. Legal Aid
+Live firebase site link: https://assignment-11-45242.web.app/services/636b608c24861e88b0f1c7dd
+
+Features of this project:
+1. JavaScript
+2. Tailwind and daisyui
+3. Firebase Authentication
+4. React
+5. React router dom
+6. dotenv
+7. mongodb
+8. Context API
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
