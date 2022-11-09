@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
 
-  const { img, price, description, title } = service
+  const { _id,img, price, description, title } = service
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
@@ -19,7 +20,9 @@ const ServiceCard = ({ service }) => {
             <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
             <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
           </div>
+          <Link to={`/services/${_id}`}> 
           <button className="btn btn-outline">Details</button>
+          </Link>
         </div>
       </div>
     </div>
