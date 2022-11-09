@@ -17,7 +17,7 @@ const Header = () => {
     </div>
   </div>
   <div className="navbar-center">
-    <Link to='/' className="normal-case text-3xl font-bold">Mr. Legal Aid</Link>
+    <Link to='/' className="normal-case text-2xl font-bold">Mr. Legal Aid</Link>
   </div>
   <div className="navbar-end">
     

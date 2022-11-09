@@ -6,10 +6,10 @@ const About = () => {
         <figure><img className='mask mask-triangle-4' src="https://placeimg.com/400/400/arch" alt="Album"/></figure>
         <div className="card-body">
           <h2 className="text-4xl">About Us</h2>
-          <p className=' text-white'>We are an international law practitioner based in China. 
-         <br/> "Landing" has been growing at breakneck speed in recent years.
+          <p className=' text-white'>We are an international law practitioner based in Bangladesh. 
+         <br/> We have been growing at breakneck speed in recent years.
           <br/> In the past two years or so it has established several dozens of 
-<br/> offices within and outside China, covering such places as Shanghai and Beijing in China,
+<br/> offices within and outside Bangladesh, covering such places as Dhaka and Chittagong in Bangladesh,
     <br/>       and in countries including India, Iran, the Philippines and Singapore.</p>
 
           <div className="">
