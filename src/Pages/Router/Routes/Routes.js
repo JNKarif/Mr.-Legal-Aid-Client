@@ -7,6 +7,7 @@ import ServiceDetails from "../../ServiceDetails/ServiceDetails";
 import Blog from "../../Shared/Header/Blog/Blog";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/reviews',
-                element: <Reviews></Reviews>
+                element: <PrivateRoute><Reviews></Reviews></PrivateRoute>
 
             },
             {
