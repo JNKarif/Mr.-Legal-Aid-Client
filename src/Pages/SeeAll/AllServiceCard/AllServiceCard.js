@@ -27,9 +27,7 @@ const AllServiceCard = ({service}) => {
           <Link to={`/services/${_id}`}> 
           <button className="btn btn-outline">Details</button>
           </Link>
-          <Link to='/addservice'>
-          <button className="btn btn-outline">Add Service</button>
-          </Link>
+          
         </div>
       </div>
     </div>
