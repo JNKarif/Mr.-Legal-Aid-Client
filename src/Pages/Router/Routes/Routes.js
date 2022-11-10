@@ -1,5 +1,6 @@
 import Main from "../../../Layout/Main";
 import AddService from "../../AddServices/AddService";
+import Edit from "../../Edit/Edit";
 
 import Home from "../../Home/Home/Home";
 import PageNotFound from "../../PageNotFound/PageNotFound";
@@ -52,15 +53,20 @@ const router = createBrowserRouter([
             },
             {
 
-                path:'/addedservice',
-                element:<PrivateRoute><AddService></AddService></PrivateRoute>,
-                loader:()=>fetch('https://assignment-11-server-five-kappa.vercel.app/addedservice')
+                path: '/addedservice',
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>,
+                loader: () => fetch('https://assignment-11-server-five-kappa.vercel.app/addedservice')
+            },
+            {
+                path: '/edit/:id',
+                element: <Edit></Edit>,
+                loader: ({ params }) => fetch(`https://assignment-11-server-five-kappa.vercel.app/edit/${params.id}`)
             },
             {
                 path: '*',
                 element: <PageNotFound></PageNotFound>
             },
-           
+
         ]
     }
 ])

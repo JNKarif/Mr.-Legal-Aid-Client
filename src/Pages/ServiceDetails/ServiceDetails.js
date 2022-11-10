@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import AddService from '../AddServices/AddService';
 
 import AddReview from './AddReview/AddReview';
@@ -10,16 +11,16 @@ const ServiceDetails = () => {
     const { img, price, description, title } = useLoaderData();
 
     const { loading } = useContext(AuthContext)
-   
+    useTitle('Details')
 
-    if(loading){
+    if (loading) {
         return <button className="btn loading">loading</button>
     }
 
     return (
         <div>
             {/* details section */}
-           
+
             <div className="card card-side grid grid-cols-1 md:grid-cols-2 bg-base-100 shadow-xl">
                 <div className='w-full bg-black-600'>
 
@@ -35,10 +36,10 @@ const ServiceDetails = () => {
             </div>
 
 
-<div>
+            <div>
 
-    <AddService></AddService>
-</div>
+                <AddService></AddService>
+            </div>
 
 
             {/* review section */}

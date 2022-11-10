@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import useTitle from '../../../Hooks/useTitle';
 
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext)
+
+    useTitle('SignUp')
+
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -17,6 +21,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset()
             })
             .catch(err => console.error(err))
 

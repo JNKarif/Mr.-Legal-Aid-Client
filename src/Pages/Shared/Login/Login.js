@@ -1,11 +1,17 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import useTitle from '../../../Hooks/useTitle';
 
 const Login = () => {
 
     const { login, providerLogin } = useContext(AuthContext)
+    useTitle('Login')
+
+    const navigate = useNavigate();
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
 
     const handleLogin = event => {
         event.preventDefault();
@@ -13,13 +19,33 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password)
+        // console.log(email, password)
 
         login(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
-                form.reset()
+                // console.log(user.email);
+                // form.reset();
+
+                const currentUser = {
+                    email: user.email
+                }
+                console.log(currentUser)
+                // JWT Token
+                fetch('https://assignment-11-server-five-kappa.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data);
+                    localStorage.setItem('legalAidToken',data.token)
+                    navigate(from,{replace:true})
+                })
+
             })
             .catch(error => console.error(error))
     }

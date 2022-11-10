@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import ReviewsRow from './ReviewsRow';
 
 const Reviews = () => {
@@ -7,7 +8,7 @@ const Reviews = () => {
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([])
 
-
+    useTitle('Reviews')
     useEffect(() => {
         fetch(`https://assignment-11-server-five-kappa.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
@@ -26,13 +27,13 @@ const Reviews = () => {
                     console.log(data);
                     if (data.deletedCount > 0) {
                         alert('deleted successfully');
-                        const remaining = reviews.filter( rev=>
+                        const remaining = reviews.filter(rev =>
                             rev._id !== id);
-                            setReviews(remaining)
+                        setReviews(remaining)
                     }
-                  if(reviews.length===0){
-                    alert("No review were added")
-                  }
+                    if (reviews.length === 0) {
+                        alert("No review were added")
+                    }
                 })
         }
     }

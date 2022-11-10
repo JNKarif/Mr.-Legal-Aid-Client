@@ -7,7 +7,7 @@ const {serviceName, client, phone, price}=add;
         <th>{client}</th>
         <td>{phone}</td>
         <td>{serviceName}</td>
-        <td>$ {price}</td>
+      <td>$ {price}</td>
       </tr>
     );
 };

@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+// import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const ReviewsRow = ({ review, handleDelete }) => {
+  // const {user}= useContext(AuthContext)
   const { serviceName, client, url, message, email, _id } = review;
 
 
@@ -37,7 +40,11 @@ const ReviewsRow = ({ review, handleDelete }) => {
           <div className="text-sm ">"{message}"</div>
         </th>
         <th>
-          <button className="btn btn-outline btn-xs">Edit review</button>
+          <Link to={`/edit/${review._id}`}>
+
+
+          <button  className="btn btn-outline btn-xs">Edit review</button>
+          </Link>
         </th>
       </tr>
     </div>
