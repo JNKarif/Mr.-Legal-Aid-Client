@@ -25,7 +25,7 @@ const Header = () => {
               user?.email ?
                 <>
                   <li><Link to='/reviews'>My Review</Link></li>
-                  <li><Link to='/'>Add Service</Link></li>
+                  <li><Link to='/addedservice'>Add Service</Link></li>
                   <li>
                     <button onClick={handleSignOut}>Sign Out</button>
                   </li>

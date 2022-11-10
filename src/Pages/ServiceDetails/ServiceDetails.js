@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import AddService from '../AddServices/AddService';
 
 import AddReview from './AddReview/AddReview';
-import AddService from './AddService/AddService';
+
 
 const ServiceDetails = () => {
     const { img, price, description, title } = useLoaderData();

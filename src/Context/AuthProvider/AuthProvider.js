@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import app from '../../Firebase/firebase.config';
 
 export const AuthContext = createContext();
@@ -15,35 +15,38 @@ const AuthProvider = ({ children }) => {
     // default value of loading state is true 
     const [loading, setLoading] = useState(true)
 
+    const providerLogin = (provider) => {
+        return signInWithPopup(auth, provider)
+    }
 
 
-    
+
     const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
 
-    const login=(email, password)=>{
+    const login = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-    const logOut=()=>{
-return signOut(auth)
+    const logOut = () => {
+        return signOut(auth)
     }
 
-    
+
     // onAuthStateChanged to understand whether use is login or not
     useEffect(() => {
-      const unsubscribe=  onAuthStateChanged(auth, currentUser => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
             console.log(currentUser);
             setUser(currentUser);
             setLoading(false)
 
         });
 
-        return()=>{
+        return () => {
             return unsubscribe()
         }
 
@@ -55,7 +58,8 @@ return signOut(auth)
         loading,
         login,
         logOut,
-        createUser
+        createUser,
+        providerLogin
 
     }
 
