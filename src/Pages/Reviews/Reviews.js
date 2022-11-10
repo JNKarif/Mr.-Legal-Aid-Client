@@ -30,6 +30,9 @@ const Reviews = () => {
                             rev._id !== id);
                             setReviews(remaining)
                     }
+                   else{
+                    alert('no review added')
+                }
                 })
         }
     }

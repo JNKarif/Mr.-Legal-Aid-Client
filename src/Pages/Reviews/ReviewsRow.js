@@ -35,7 +35,10 @@ const ReviewsRow = ({review, handleDelete}) => {
               </td>
              
               <th>
-                <button className="btn btn-ghost btn-xs">{message}</button>
+              <div className="text-sm ">"{message}"</div>
+              </th>
+              <th>
+                <button className="btn btn-outline btn-xs">Edit review</button>
               </th>
             </tr> 
         </div>
