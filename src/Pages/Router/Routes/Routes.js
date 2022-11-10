@@ -44,7 +44,7 @@ const router = createBrowserRouter([
 
             },
             {
-                path: '/services/seeall',
+                path: '/services',
                 element: <SeeAll></SeeAll>
             },
             {

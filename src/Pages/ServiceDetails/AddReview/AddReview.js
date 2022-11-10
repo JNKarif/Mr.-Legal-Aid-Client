@@ -23,13 +23,13 @@ const AddReview = () => {
             message
         }
 
-        // if (!user?.email) {
+        if (!user?.email) {
 
-        //     alert('Please login to add a review')
-        // }
-        // else {
+            alert('Please login to add a review')
+        }
+        else {
 
-        // }
+        }
 
 
 
@@ -50,7 +50,7 @@ const AddReview = () => {
                     form.reset()
                 }
             })
-            .catch(err => console.error(err))
+            .catch(err => console.error(err));
 
     }
 
@@ -67,9 +67,21 @@ const AddReview = () => {
                 </div>
                 <textarea name='message' className="textarea textarea-accent w-full" placeholder="Your review"></textarea>
 
+{
+user?.email ?
+<>
+<input type="submit" className='btn btn-outline' name="" value="Add Review"/>
+</>
 
-                <input type="submit" className='btn btn-outline' name="" value="Add Review"
-                />
+:
+
+<>
+<input type="submit" className='btn btn-outline' name="" value="Add Review" disabled />
+</>
+    
+}
+
+                
             </form>
         </div>
     );

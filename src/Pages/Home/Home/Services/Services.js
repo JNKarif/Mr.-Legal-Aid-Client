@@ -1,15 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
 
     const [services, setServices] = useState([]);
 
+
+    // const {loading } = useContext(AuthContext)
+   
+
+    // 
+
+    // if(services.length===0){
+    //     loading(true)
+    // }
+
     useEffect(() => {
-        fetch('https://assignment-11-server-five-kappa.vercel.app/services')
+        fetch('https://assignment-11-server-five-kappa.vercel.app/services3')
             .then(res => res.json())
             .then(data => setServices(data))
+            .catch(err=>console.error(err))
+            // if(loading){
+            //         return <button className="btn loading">loading</button>
+            //     }
     }, [])
 
     return (
@@ -20,16 +35,16 @@ const Services = () => {
 
                 {
 
-                    services.map(service => <ServiceCard
-                        key={service.service_id}
-                        service={service}
+                    services.map(ser => <ServiceCard
+                        key={ser.service_id}
+                        ser={ser}
                     ></ServiceCard>)
 
                 }
 
             </div>
             <div className='text-center'>
-                <Link to='/services/seeall'>
+                <Link to='/services'>
                     <button className='btn btn-outline w-2/5'>See All</button>
                 </Link>
 

@@ -25,6 +25,7 @@ const Header = () => {
               user?.email ?
                 <>
                   <li><Link to='/reviews'>My Review</Link></li>
+                  <li><Link to='/'>Add Service</Link></li>
                   <li>
                     <button onClick={handleSignOut}>Sign Out</button>
                   </li>
@@ -33,7 +34,7 @@ const Header = () => {
                 <li><Link to='/login'>Login</Link></li>
             }
 
-            <li><Link to='/'>Add Service</Link></li>
+            
           </ul>
         </div>
       </div>
